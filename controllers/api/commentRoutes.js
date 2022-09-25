@@ -14,17 +14,22 @@ router.get('/', async(req, res) => {
         })
 });
 
-router.get('/:id', (req, res) => {
+router.get('/:id', async(req, res) => {
     Comment.findAll({
+        comment_text: req.body.comment_text}, {
             where: {
                 id: req.params.id
-            }
+            },
+            attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
         })
-        .then(commentData => res.json(commentData))
+        .then(commentData => {
+            res.json(commentData)
+            console.log(commentData)})
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
         })
+        
 });
 
 

@@ -15,7 +15,7 @@ router.post('/', withAuth, async(req, res) => {
     }
 });
 
-router.get('/:id', (req, res) => {
+router.get('/:id', async(req, res) => {
     Post.findOne({
             where: {
                 id: req.params.id
@@ -24,7 +24,7 @@ router.get('/:id', (req, res) => {
                 'id',
                 'title',
                 'created_at',
-                'post_content'
+                'post_content',
             ],
             include: [
                 // include the Comment model here:
