@@ -10,9 +10,13 @@
                                 title="Source Title">{{format_date createdAt}}</cite></small></p>
                 </div>
                 <div class="card-body">
-                    <p class="h5">{{description}}</p>
+                    <p class="h5">{{post_content}}</p>
+                    <p class="h5">{{comment_text}}</p>
                 </div>
             </div>
+        </div>
+        <div class="col-md-4">
+            <button class="btn btn-sm btn-danger delete-post-btn" data-id="{{post.id}}">DELETE</button>
         </div>
 
         {{#if comments.length}}
@@ -21,7 +25,7 @@
             <div class="card w-50 text-white bg-secondary border-light">
                 <div class="card-body">
                     <blockquote class="blockquote mb-0 text-center">
-                        <p>{{comment.description}}</p>
+                        <p>{{comment.comment_text}}</p>
                         <footer class="blockquote-footer text-white m-0">{{user.username}} <cite
                                 title="Source Title">{{format_date createdAt}} </cite></footer>
                     </blockquote>
@@ -47,3 +51,4 @@
 </div>
 
 <script src="/javascript/comment.js"></script>
+<script src="/javascript/deletePost.js"></script>
