@@ -8,7 +8,7 @@ Our task this week was to build a CMS-style blog site similar to a Wordpress sit
 
 This is an important activity as it allowed us to implement our handlebars and sequelize skills, practice and show our understanding of routes (get, post, put, delete), demonstrate our understanding of one to one and one to many relationships and continue our understanding of async functions. 
 
-To view the application live on Heroku [please click]() 
+To view the application live on Heroku [please click](https://git.heroku.com/polar-tundra-36305.git) 
 
 
 ## Table of Contents 
@@ -29,7 +29,7 @@ This is done by running  `npm run seed` to seed data to your database so that yo
 Once the seeds have been executed create the code needed in `server.js` to sync the Sequelize models to the MySQL database on server start.
 
 ## Usage
-To use the application please view it live on Heroku. You can click [here to view it on Heroku]()
+To use the application please view it live on Heroku. You can click [here to view it on Heroku](https://git.heroku.com/polar-tundra-36305.git)
 
 
 ## Features
