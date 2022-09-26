@@ -15,20 +15,32 @@ router.get('/', async(req, res) => {
 });
 
 router.get('/:id', async(req, res) => {
-    Comment.findAll({
-        comment_text: req.body.comment_text}, {
-            where: {
-                id: req.params.id
-            },
-            attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-        })
-        .then(commentData => {
-            res.json(commentData)
-            console.log(commentData)})
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        })
+    try {
+    const comments = await Comment.findAll({
+        where: {
+            id: req.params.id
+        },
+        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+    });
+    res.json(comments);
+} catch (err) {
+    console.log(err);
+                res.status(400).json(err);
+}
+        // Comment.findAll({
+        // comment_text: req.body.comment_text}, {
+        //     where: {
+        //         id: req.params.id
+        //     },
+        //     attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+        // })
+        // .then(commentData => {
+        //     res.json(commentData)
+        //     console.log(commentData)})
+        // .catch(err => {
+        //     console.log(err);
+        //     res.status(500).json(err);
+        // })
         
 });
 
