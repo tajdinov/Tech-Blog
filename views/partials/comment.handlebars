@@ -4,10 +4,16 @@
         <section class="comment card-body">
             <div class="text">
                 {{comment_text}}
+                <p class="comment_id hidden">{{id}}</p>
             </div>
             <p class="card-text"><small class="text-white">Commented by {{user.username}} <cite
-                        title="Source Title">{{format_date createdAt}}</cite></small></p>
+                        title="Source Title">{{format_date created_at}}</cite></small></p>
 
         </section>
     </div>
 </div>
+<div class="col-md-4">
+    <button class="btn btn-sm btn-danger delete-comment-btn mb-2" value="{{id}}">Delete Comment</button>
+</div>
+
+<script src="/javascript/deleteComment.js"></script>

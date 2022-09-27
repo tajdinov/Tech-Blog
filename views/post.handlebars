@@ -11,7 +11,6 @@
                 </div>
                 <div class="card-body">
                     <p class="h5">{{post_content}}</p>
-                    <p class="h5">{{comment_text}}</p>
                 </div>
             </div>
         </div>
@@ -19,22 +18,9 @@
             <button class="btn btn-sm btn-danger delete-post-btn mb-2" data-id="{{post.id}}">DELETE</button>
         </div>
 
-        {{>comment}}
         {{#if comments.length}}
         {{#each comments as |comment|}}
-
-        <div class="col d-flex justify-content-center mb-2">
-            <div class="card w-50 text-white bg-secondary border-light">
-                <div class="card-body">
-                    <blockquote class="blockquote mb-0 text-center">
-                        <p>{{comment.comment_text}}</p>
-                        <footer class="blockquote-footer text-white m-0">{{user.username}} <cite
-                                title="Source Title">{{format_date createdAt}} </cite></footer>
-                    </blockquote>
-                </div>
-            </div>
-
-        </div>
+        {{> comment}}
         {{/each}}
         {{/if}}
 

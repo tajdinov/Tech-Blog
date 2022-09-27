@@ -18,7 +18,7 @@ const sess = {
     secret: 'Super secret secret',
     //need to make sure expires time is correct in cookie. 
     cookie: {
-        maxAge: 1000000
+        maxAge: 34560000
     },
     //1000000 million seconds is 16minutes 
     resave: false,
