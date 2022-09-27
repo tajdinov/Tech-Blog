@@ -3,9 +3,13 @@
     <h2>Your Posts</h2>
     {{#each posts as |post|}}
     {{> post-info post}}
+    <div class="col-md-4">
+        <button class="btn btn-sm btn-danger delete-post-btn-{{post.id}} mb-2" data-id="{{post.id}}">DELETE</button>
+    </div>
     {{/each}}
 
 </section>
 {{/if}}
 
 <button type="submit" class="btn"><a class="link" href="/dashboard/create">+ New Post</a></button>
+<script src="/javascript/deletePost.js"></script>
