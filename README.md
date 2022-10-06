@@ -10,6 +10,8 @@ This is an important activity as it allowed us to implement our handlebars and s
 
 To view the application live on Heroku [please click](https://git.heroku.com/polar-tundra-36305.git) 
 
+![](public/images/main.png)
+
 
 ## Table of Contents 
 - [Installation](#installation)
